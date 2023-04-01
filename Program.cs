@@ -1,25 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
-int ReadInt ( string message)
+System.Console.Write("Укажите трехзначное число >");
+string value;
+value = Console.ReadLine(); 
+int number = Convert.ToInt32(value); 
+if(number<1000)
 {
-System.Console.Write($"{message}");
-int value = Convert.ToInt32(Console.ReadLine());
-return value;
-}
-int num = ReadInt("Укажите число");
-while(num > 1000)
-{
-num = num /10;
-}
-if(num >100)
-{
-num = num % 10;
-System.Console.WriteLine($"Третья цифра является {num}");
+    if(number>99)
+    {   
+        int penultimate = number / 10 %10;
+        System.Console.Write($"Вторая цифра числа {number} является {penultimate}" );
+    }  
+    else
+    {
+        System.Console.Write(" НЕ является трехзначным числом!");
+    }  
+    
 }
 else
 {
-System.Console.WriteLine("нет цифры!");
+    System.Console.Write("НЕ является трехзначным числом!");
 }
-
 
 
 
